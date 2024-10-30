@@ -1,12 +1,30 @@
 import { SummaryItem as SummaryItemType } from "@/types/summary";
 import Image from "next/image";
 
-const SummaryItem = ({ category, score, icon }: SummaryItemType) => {
+const SummaryItem = ({
+  category,
+  score,
+  icon,
+  backgroundColorClassName,
+  textColorClassName,
+}: SummaryItemType) => {
   return (
-    <div>
-      <Image src={icon} alt={category} height={20} width={20} />
-      <h3>{category}</h3>
-      <p>{score}/100</p>
+    <div
+      className={`flex items-center py-3.5 px-5 mb-6 bg-opacity-5 rounded-lg ${backgroundColorClassName}`}
+    >
+      <Image
+        src={icon}
+        alt={category}
+        height={20}
+        width={20}
+        className="mr-2.5"
+      />
+      <h3 className={`${textColorClassName} sm:text-lg text-base`}>
+        {category}
+      </h3>
+      <p className="ms-auto font-bold">
+        {score} <span className="text-light-gray">/ 100</span>
+      </p>
     </div>
   );
 };

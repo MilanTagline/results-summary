@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply font-hanken-grotesk;
+  @apply font-hanken-grotesk text-lg;
 }
