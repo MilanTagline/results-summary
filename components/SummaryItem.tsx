@@ -12,7 +12,7 @@ const SummaryItem = ({
   return (
     <div
       className={clsx(
-        "flex items-center py-3.5 px-5 mb-6 bg-opacity-5 rounded-lg",
+        "flex items-center py-3.5 px-5 mb-6 bg-opacity-5 rounded-lg hover:scale-110 transition-all",
         backgroundColorClassName
       )}
     >
