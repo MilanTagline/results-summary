@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Hanken_Grotesk } from "next/font/google";
+import clsx from "clsx";
 
 const hankenGrotesk = Hanken_Grotesk({
   variable: "--font-hanken-grotesk",
@@ -19,6 +20,21 @@ export const metadata: Metadata = {
       type: "image/png",
     },
   },
+  openGraph: {
+    type: "website",
+    title: "Results Summary",
+    description:
+      "View a comprehensive summary of your results, including reaction, memory, verbal and visual scores.",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Results Summary",
+      },
+    ],
+    locale: "en_US",
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${hankenGrotesk.variable} antialiased`}>
+      <body className={clsx(hankenGrotesk.variable, "antialiased")}>
         {children}
       </body>
     </html>
