@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Hanken_Grotesk } from "next/font/google";
+
+const hankenGrotesk = Hanken_Grotesk({
+  variable: "--font-hanken-grotesk",
+  weight: ["500", "700", "800"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Results Summary",
@@ -8,6 +15,8 @@ export const metadata: Metadata = {
   icons: {
     icon: {
       url: "/favicon-32x32.png",
+      sizes: "32x32",
+      type: "image/png",
     },
   },
 };
@@ -19,7 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+      <body className={`${hankenGrotesk.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
