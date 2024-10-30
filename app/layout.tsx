@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "View a comprehensive summary of your results, including reaction, memory, verbal and visual scores.",
   icons: {
     icon: {
-      url: "/favicon-32x32.png",
+      url: "/images/favicon-32x32.png",
       sizes: "32x32",
       type: "image/png",
     },
